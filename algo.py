@@ -10,10 +10,10 @@ def main():
     gmaps = googlemaps.Client(key='AIzaSyAZs33KAQ57SeZ6HJJYd-4nFisiFTnES94')
 
     for row in df.iterrows():
-        list = []
+        distList = []
         for row2 in df.iterrows():
             result = gmaps.distance_matrix(origins=row[0], destinations=row2[0], mode="driving")["rows"][0]["elements"][0]["distance"]["value"]
-            list.append(result)    
+            distList.append(result)    
     
     click.echo(list)
 
